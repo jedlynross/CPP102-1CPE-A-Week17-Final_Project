@@ -24,25 +24,29 @@ This device monitoring system program displays the recorded temperature readings
  
 ## Sample Output
 ```
-Enter choice: 1
+Enter choice: 4
 
-CURRENT READINGS
-----------------
-Reading 1: 28 °C
-Reading 2: 31 °C
-Reading 3: 35 °C
-Reading 4: 37 °C
-Reading 5: 29 °C
+MONITORING SUMMARY
+------------------
+Number of readings  : 5
+Total of readings   : 160
+Average temperature : 32.00 °C
+Minimum temperature : 28 °C
+Maximum temperature : 37 °C
+
+NORMAL   : 2 (40.00%)
+WARNING  : 2 (40.00%)
+CRITICAL : 1 (20.00%)
+
+Overall Status: ATTENTION REQUIRED
 ```
  
 ## Test Cases
-I performed 10 tests. __ passed and __ failed.
-Full details are in test_cases.md.
+I performed 10 tests, and initially, 9 passed while 1 failed. After fixing the bug, all 10 tests passed successfully. The full details are in test_cases.md.
  
 ## Known Limitations
-- Example: Readings are lost when the program closes.
-- (add your own)
+- When the program is closed and run again, the reading list resets, meaning that the newly added readings are not saved.
+- The program only accepts whole numbers and decimal numbers are rejected.
  
 ## Reflection
-Write 3 to 5 sentences. What was the hardest part? Which bug did
-you fix and how? What would you improve next?
+The hardest part was figuring out which code should come first and arranging the code properly to fix the bug. The bug I fixed was that newly added temperature readings did not appear in the reading list, even though the program accepted them. I solved this by using readings.append(value) to add the validated reading to the existing list. Next, I would like to learn other ways to identify the best approach to solving coding problems and improve my debugging skills.
